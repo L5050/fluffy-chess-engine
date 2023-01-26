@@ -33,7 +33,7 @@ posBoard[i] = board[i];
 
 //pawns = 100, bishops 300, knights 300, rooks 500, queens 900
 
-int evaluatePosition() {
+float evaluatePosition() {
   int evaluation = 0;
     for (int i = 0; i < 64; i++) {
       switch (posBoard[i]) {
@@ -69,7 +69,9 @@ int evaluatePosition() {
         break;
       }
     }
-  return evaluation;
+  float f = evaluation;
+  f = f / 100;
+  return f;
 }
 
 int main()
